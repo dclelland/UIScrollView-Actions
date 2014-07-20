@@ -33,3 +33,12 @@ UIScrollView category for scrolling to edges and pages.
 
     [self.view scrollToHorizontalPageIndex:2 animated:YES];
     [self.view scrollToVerticalPageIndex:3 animated:YES];
+
+✓ Convenience method for getting the scrollView from a `UIViewController` of unknown subclass (i.e. a `UITableViewController` or `UICollectionViewController`)
+
+    - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+    {
+        if (viewController.scrollView) {
+            [viewController.scrollView setBounces:NO];
+        }
+    }

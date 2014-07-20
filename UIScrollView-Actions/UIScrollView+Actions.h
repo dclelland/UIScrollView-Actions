@@ -32,3 +32,9 @@
 - (void)scrollToHorizontalPageIndex:(NSUInteger)pageIndex animated:(BOOL)animated;
 
 @end
+
+@interface UIViewController (UIScrollView)
+
+- (UIScrollView *)scrollView;
+
+@end

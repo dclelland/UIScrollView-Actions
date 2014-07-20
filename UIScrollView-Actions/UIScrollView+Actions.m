@@ -93,3 +93,22 @@
 }
 
 @end
+
+@implementation UIViewController (UIScrollView)
+
+- (UIScrollView *)scrollView
+{
+    if ([self isKindOfClass:[UITableViewController class]]) {
+        UITableViewController *tableViewController = (UITableViewController *)self;
+        return tableViewController.tableView;
+    }
+    
+    if ([self isKindOfClass:[UICollectionViewController class]]) {
+        UICollectionViewController *collectionViewController = (UICollectionViewController *)self;
+        return collectionViewController.collectionView;
+    }
+    
+    return nil;
+}
+
+@end
