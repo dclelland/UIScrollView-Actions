@@ -22,12 +22,12 @@
 
 - (CGPoint)leftContentOffset
 {
-    return CGPointMake(0.0f, -self.contentInset.left);
+    return CGPointMake(-self.contentInset.left, 0.0f);
 }
 
 - (CGPoint)rightContentOffset
 {
-    return CGPointMake(0.0f, self.contentSize.width + self.contentInset.right - self.bounds.size.width);
+    return CGPointMake(self.contentSize.width + self.contentInset.right - self.bounds.size.width, 0.0f);
 }
 
 - (BOOL)isScrolledToTop
