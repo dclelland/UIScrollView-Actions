@@ -82,13 +82,11 @@
 
 - (void)scrollToVerticalPageIndex:(NSUInteger)pageIndex animated:(BOOL)animated
 {
-    if (self.verticalPageIndex == pageIndex) return;
     [self setContentOffset:CGPointMake(0.0f, self.frame.size.height * pageIndex) animated:animated];
 }
 
 - (void)scrollToHorizontalPageIndex:(NSUInteger)pageIndex animated:(BOOL)animated
 {
-    if (self.horizontalPageIndex == pageIndex) return;
     [self setContentOffset:CGPointMake(self.frame.size.width * pageIndex, 0.0f) animated:animated];
 }
 
