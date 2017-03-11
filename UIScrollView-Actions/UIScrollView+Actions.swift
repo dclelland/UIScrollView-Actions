@@ -123,3 +123,38 @@ public extension UIScrollView {
     }
     
 }
+
+// MARK: Snapping
+
+extension UIScrollView {
+    
+    /// An axis on the scroll view.
+    public enum Axis {
+        
+        /// The scroll view's horizontal axis.
+        case horizontal
+        
+        /// The scroll view's vertical axis.
+        case vertical
+        
+    }
+    
+    /// Snaps the scroll view's position to either end of a given axis, based upon which is closer.
+    public func snap(to axis: Axis, animated: Bool = false) {
+        switch (axis) {
+        case .horizontal:
+            if (contentOffset.x < contentOffset(for: .right).x / 2.0) {
+                scroll(to: .left, animated: animated)
+            } else {
+                scroll(to: .right, animated: animated)
+            }
+        case .vertical:
+            if (contentOffset.y < contentOffset(for: .bottom).y / 2.0) {
+                scroll(to: .top, animated: animated)
+            } else {
+                scroll(to: .bottom, animated: animated)
+            }
+        }
+    }
+    
+}
