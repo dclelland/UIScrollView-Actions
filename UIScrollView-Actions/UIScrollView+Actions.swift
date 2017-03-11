@@ -53,8 +53,8 @@ public extension UIScrollView {
         }
     }
     
-    /// Calculates the correct content offset for a given edge.
-    private func contentOffset(for edge: Edge) -> CGPoint {
+    /// Calculates the correct content offset for a given edge, respecting content insets.
+    public func contentOffset(for edge: Edge) -> CGPoint {
         switch edge {
         case .top:
             return CGPoint(
@@ -106,8 +106,8 @@ public extension UIScrollView {
         setContentOffset(contentOffset(for: page), animated: animated)
     }
     
-    /// Calculates the correct content offset for a given page index.
-    private func contentOffset(for page: Page) -> CGPoint {
+    /// Calculates the correct content offset for a given page index, respecting content insets.
+    public func contentOffset(for page: Page) -> CGPoint {
         switch page {
         case .horizontal(let page):
             return CGPoint(
